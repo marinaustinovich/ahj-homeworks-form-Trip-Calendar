@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/y1x8dit5o0fdgiym/branch/main?svg=true)](https://ci.appveyor.com/project/marinaustinovich/ahj-homeworks-form-trip-calendar/branch/main)
 
 ### Trip Calendar (задача со звёздочкой)
 

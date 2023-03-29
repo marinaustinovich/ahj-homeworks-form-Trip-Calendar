@@ -1,0 +1,532 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  text-align: center;
+  padding: 25px;
+}
+
+.container {
+  background-color: antiquewhite;
+  border: 1px solid #9e2c2c;
+  border-radius: 0.75rem;
+  padding: 3rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.calendar-title {
+  padding-top: 15px;
+  background-color:#1a2033;
+}
+
+.title {
+  color:#ffffff;
+}
+
+.calendar-text {
+  color:#ffffff;
+  font-weight:500;
+}
+
+.calendar-content {
+  background-color:#1a2033; 
+}
+
+.t-container_100 {
+  width: 100%;
+  padding: 0;
+}
+
+.t-width {
+  width: 100%;
+}
+
+.t-container:before, .t-container:after, 
+.t-container_10:before, .t-container_10:after, 
+.t-container_8:before, .t-container_8:after,
+.t-container_100:before, .t-container_100:after {
+  display: table;
+  content: " ";
+  width: 0;
+}
+
+.t-container:after, .t-container_10:after, .t-container_8:after, .t-container_100:after {
+  clear: both;
+}
+
+#railway-suburban-schedule-app, #ufs-railway-ratings-app, #ufs-railway-schedule-app, #user-auth-app, .ufs-railway-app {
+  color: #666;
+  font-family: museo_sans,sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.wg-search {
+  -webkit-box-sizing: border-box;
+  color: #fff;
+}
+
+.wg-search, .wg-search-box-container {
+  background: #1A2033;
+  opacity: 1;
+  border-radius: 0px;
+}
+
+.wg-search__inner {
+  padding: 30px 30px 55px;
+}
+
+.wg-search__col-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.wg-search__col {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+.wg-search__col_submit {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+}
+
+.wg-search__row {
+  position: relative;
+}
+
+.wg-search__label {
+  color: #c9c9c9;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  overflow: hidden;
+  padding-bottom: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wg-search__textinput {
+  background: #fff;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #21283e;
+  font-size: 14px;
+  font-weight: 500;
+  height: 42px;
+  line-height: 42px;
+  outline: none;
+  padding: 0 14px;
+}
+
+.wg-search__textinput_wide {
+  width: 100%;
+}
+
+.wg-search__textinput[type=text] {
+  background: #fff;
+}
+
+.wg-search__row .wg-autocomplete.wg-search__input-dialog {
+  top: calc(100% + 10px);
+}
+
+.wg-search__input-dialog {
+  left: 0;
+  position: absolute;
+  top: calc(100% - 1px);
+  width: 100%;
+  z-index: 1010;
+}
+
+.wg-autocomplete {
+  background: #fff;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,.14);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.14);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #21283e;
+  display: none;
+  font-size: 16px;
+  max-width: 444px;
+  min-width: 140px;
+  width: 100%;
+  z-index: 2;
+}
+
+.wg-search__example {
+  color: #c9c9c9;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 10px 0 0;
+  position: absolute;
+  top: 100%;
+}
+
+.wg-search__example-item {
+  border-bottom: 1px dotted #9fa9c6;
+  color: #9fa9c6;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+}
+
+.wg-search__col_switch {
+  max-width: 0;
+}
+
+
+
+.wg-icon {
+  background-image: url(../img/icons-sprite-v2.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
+
+.wg-icon_change {
+  background-image: url(../img/icons-sprite-v28.svg);
+  background-position: -32px -112px;
+  height: 15px;
+  width: 19px;
+}
+
+.wg-search__switch {
+  cursor: pointer;
+  left: 50%;
+  margin: 4px 0 0 -9px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.wg-search__tablet-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.wg-search .wg-search__tip {
+  color: #666;
+  line-height: 14px;
+  position: absolute;
+  right: 0;
+  top: -4px;
+}
+
+.wg-tip, .wg-tip__button {
+  display: inline-block;
+  position: relative;
+}
+
+.wg-tip {
+  outline: none;
+}
+
+.wg-tip__popup {
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  color: rgba(43, 38, 44, 0.5);
+  width: 200px;
+  z-index: 999;
+  line-height: 1.5;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.wg-tip__button .wg-icon:not(.wg-icon_disabled) {
+  cursor: pointer;
+}
+
+.wg-icon_info, .wg-icon_question {
+  background-image: url(../img/icons-sprite-v28.svg);
+  height: 21px;
+  width: 21px;
+}
+
+.wg-icon_info {
+  background-position: -84px -56px;
+}
+
+.wg-datepicker {
+  background: #fff;
+  -webkit-box-shadow: 0 0 25px rgba(0,0,0,.2);
+  box-shadow: 0 0 25px rgba(0,0,0,.2);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 282px;
+  z-index: 2;
+}
+
+.wg-datepicker:before {
+  background: #fff;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  content: "";
+  height: 6px;
+  left: 20px;
+  position: absolute;
+  top: -4px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 6px;
+}
+
+.wg-search__col_date-to .wg-datepicker:before {
+  left: 22px;
+  right: auto;
+}
+
+.wg-search__input-dialog {
+  left: 1%;
+  position: absolute;
+  top: calc(100% + 7px);
+  width: 100%;
+  z-index: 1010;
+}
+
+.wg-search__input-dialog_datepicker {
+  max-width: 304px;
+  min-width: 225px;
+  width: auto;
+}
+
+.wg-search__textinput-is-visible~.wg-search__input-dialog {
+  display: block;
+}
+
+.wg-search__datepicker-set {
+  display: table;
+  width: 100%;
+}
+
+.wg-search__datepicker-set-item {
+  display: table-cell;
+}
+
+.wg-search__datepicker {
+  background: #fff;
+  border: 0;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 14px;
+  position: relative;
+}
+
+.wg-search__datepicker-wrap {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#railway-suburban-schedule-app input:not(.wg-button), 
+#ufs-railway-ratings-app input:not(.wg-button),
+#ufs-railway-schedule-app input:not(.wg-button), 
+#user-auth-app input:not(.wg-button), 
+.ufs-railway-app input:not(.wg-button) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  font-family: inherit;
+}
+
+.wg-search__datepicker .wg-search__textinput {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  min-width: 94px;
+  padding: 0;
+  text-transform: none;
+}
+
+.wg-search__calendar-icon, .wg-search__clock-icon {
+  cursor: pointer;
+  margin-top: -12px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.wg-icon_calendar {
+  background-image: url(../img/icons-sprite-v28.svg);
+  background-position: -171px -42px;
+  height: 25px;
+  width: 24px;
+}
+
+.wg-button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #cd2026;
+  border: 2px solid #cd2026;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff!important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700!important;
+  height: 42px;
+  line-height: 38px;
+  outline: none;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: auto;
+}
+
+.wg-button:after {
+  content: attr(data-text);
+}
+
+.wg-search__col_submit {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+}
+
+.wg-search__col_submit .wg-button {
+  min-width: 107px;
+}
+
+.wg-button_always-big {
+  font-size: 18px;
+  height: 42px;
+  line-height: 38px;
+}
+
+.error {
+  display: none;
+  position: absolute;
+  padding: 5px 10px;
+  margin-left: 5px; 
+  width: 200px;
+  color:#1A2033;
+  background-color: rgb(235, 231, 226);
+  border: 2px solid red;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.error_visible {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #rec406590996 {
+    min-height: 286.19px;
+  }
+
+  .wg-search__inner {
+      padding: 25px 15px;
+  }
+
+  .wg-search__col-wrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  } 
+
+  .wg-search__col_date, .wg-search__col_way {
+    width: 100%;
+  }
+
+  .wg-search__row {
+    margin-bottom: 20px;
+  }
+
+  .wg-search__col_switch {
+    min-height: 0;
+  }
+
+  .wg-search__switch {
+    margin-top: -7px;
+  }
+
+  .wg-search__tablet-wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+  }
+  .wg-search__col_submit .wg-search__row {
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
+
+  
+
+}
+
+@media screen and (max-width: 1200px) {
+  .t-width_100 {
+    max-width: 100%;
+  }
+
+
+}
+
+@media (max-width: 1023.9px) {
+    .wg-search__col_date-from, .wg-search__col_date-to {
+      margin-bottom: 15px;
+  }
+
+  .wg-search__datepicker {
+    padding: 0 15px;
+  }
+
+  .wg-search__example_date {
+    display: block;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+  padding: 3rem 10rem;
+  }
+}
+
+@media (max-width:767.9px) {
+  .wg-search__inner {
+    padding: 5px;
+}
+
+  .wg-search__col-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+
