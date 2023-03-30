@@ -1,5 +1,5 @@
-import getDateNow from '../getDateNow';
 import localeRu from 'dayjs/locale/ru';
+import getDateNow from '../getDateNow';
 
 const dayjs = require('dayjs'); // import dayjs from 'dayjs'
 
