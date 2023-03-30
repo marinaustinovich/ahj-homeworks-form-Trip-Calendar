@@ -1,4 +1,5 @@
-import Calendar from './Calendar';
+// import Calendar from './Calendar';
+import createAirDatepicker from './createAirDatepicker';
 import getDateNow from './getDateNow';
 import messages from './messages';
 import Popup from './Popup';
@@ -7,6 +8,7 @@ export default class SearchDate {
   constructor(container) {
     this.container = container;
     this.searchDate = null;
+    this.isError = false;
   }
 
   bindToDOM() {
@@ -30,7 +32,8 @@ export default class SearchDate {
                       <div class="wg-search__datepicker-wrap">
                         <div id="wg-search-to"  class="wg-row-calendar">
                           <input readonly="" type="text" data-field="" class="wg-search__textinput wg-search__textinput_wide t_arrival_place" placeholder="Туда" value="${getDateNow().dateForInputTo}">
-                          <span class="wg-icon wg-icon_calendar wg-search__calendar-icon"></span>
+                          <span class="wg-icon wg-icon_calendar wg-search__calendar-icon" data-id="icon-calendar-to"></span>
+                          <div class="my-datepicker" id="datepicker-to"></div>
                         </div>
                       </div>
                     </div>
@@ -56,7 +59,8 @@ export default class SearchDate {
                       <div class="wg-search__datepicker-wrap">
                         <div id="wg-search-from" class="wg-row-calendar">
                           <input readonly="" type="text" data-field="" class="wg-search__textinput wg-search__textinput_wide" placeholder="Обратно" value="">
-                          <span class="wg-icon wg-icon_calendar wg-search__calendar-icon"></span>
+                          <span class="wg-icon wg-icon_calendar wg-search__calendar-icon" data-id="icon-calendar-from"></span>
+                          <div class="my-datepicker" id="datepicker-from"></div>
                         </div>
                       </div>
                     </div>
@@ -101,10 +105,18 @@ export default class SearchDate {
   }
 
   showCalendar(e) {
+    let el;
+    e.currentTarget.dataset.id === 'icon-calendar-to' ? el = '#datepicker-to' : el = '#datepicker-from';
+
+    const searchRow = e.currentTarget.closest('.wg-search__row');
+    createAirDatepicker(el, searchRow);
+    /* // for brower's calendar
+
     const isCalendar = this.container.querySelector('.wg-datepicker');
     if (isCalendar) isCalendar.parentNode.removeChild(isCalendar);
     const container = e.target.closest('.wg-row-calendar');
     const calendar = new Calendar(container);
     calendar.bindToDOM();
+    */
   }
 }

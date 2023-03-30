@@ -9,6 +9,3 @@ const searchForm = new SearchForm(calendarContainer);
 
 tripTitle.bindToDOM();
 searchForm.bindToDOM();
-
-
-

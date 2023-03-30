@@ -144,6 +144,10 @@ h1 {
   padding: 0 14px;
 }
 
+input::placeholder {
+  opacity: 0.5;
+}
+
 .wg-search__textinput_wide {
   width: 100%;
 }
@@ -444,6 +448,11 @@ h1 {
 
 .error_visible {
   display: block;
+}
+
+.my-datepicker {
+  position: absolute;
+  z-index: 999;
 }
 
 @media (min-width: 768px) {

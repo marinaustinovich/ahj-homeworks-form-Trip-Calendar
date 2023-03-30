@@ -51,6 +51,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "air-datepicker": "^3.3.5",
     "core-js": "^3.29.1",
     "dayjs": "^1.11.7"
   }
