@@ -439,7 +439,7 @@ input::placeholder {
   margin-left: 5px; 
   width: 200px;
   color:#1A2033;
-  background-color: rgb(235, 231, 226);
+  background-color: rgb(251 251 251);
   border: 2px solid red;
   border-radius: 5px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);

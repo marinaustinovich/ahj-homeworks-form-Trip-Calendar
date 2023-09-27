@@ -1,9 +1,8 @@
+### Trip Calendar (задача со звёздочкой)
+
 [![Build status](https://ci.appveyor.com/api/projects/status/y1x8dit5o0fdgiym/branch/main?svg=true)](https://ci.appveyor.com/project/marinaustinovich/ahj-homeworks-form-trip-calendar/branch/main)
 
 deployment: https://marinaustinovich.github.io/ahj-homeworks-form-Trip-Calendar/
-
-### Trip Calendar (задача со звёздочкой)
-
 #### Легенда
 
 Сервис для путешествий, а именно виджет выбора дат: туда и обратно, если установлена соответствующая галочка.

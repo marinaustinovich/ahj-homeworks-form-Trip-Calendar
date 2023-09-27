@@ -1,4 +1,4 @@
-import compareDates from '../compareDates';
+import compareDates from '../utils/compareDates';
 
 test(('should be true'), () => {
   expect(compareDates('2023-03-29', '2023-04-01')).toBe(true);

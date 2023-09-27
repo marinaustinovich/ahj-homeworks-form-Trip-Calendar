@@ -14,21 +14,21 @@ export default class SearchForm {
     this.searchForm.setAttribute('id', 'rec406590996');
     this.searchForm.setAttribute('data-animationappear', 'off');
     this.searchForm.innerHTML = `
-    <div class="t123">
-      <div class="t-container_100">
-        <div class="t-width t-width_100">
-          <div id="ufs-railway-app" class="no-touchevents">
-            <div class="ufs-railway-app">
-              <div class="wg-search">
-                <div class="wg-search__inner">
-                  <div class="wg-search__col-wrap"></div>
+      <div class="t123">
+        <div class="t-container_100">
+          <div class="t-width t-width_100">
+            <div id="ufs-railway-app" class="no-touchevents">
+              <div class="ufs-railway-app">
+                <div class="wg-search">
+                  <div class="wg-search__inner">
+                    <div class="wg-search__col-wrap"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div> 
+          </div> 
+        </div>
       </div>
-    </div>
     `;
     const searchColWrap = this.searchForm.querySelector('.wg-search__col-wrap');
     const searchWay = new SearchWay(searchColWrap);

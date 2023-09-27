@@ -1,8 +1,7 @@
-// import Calendar from './Calendar';
-import createAirDatepicker from './createAirDatepicker';
-import getDateNow from './getDateNow';
+import getDateNow from './utils/getDateNow';
 import messages from './messages';
 import Popup from './Popup';
+import AirDatePickerCreator from './AirDatePickerCreator';
 
 export default class SearchDate {
   constructor(container) {
@@ -31,7 +30,7 @@ export default class SearchDate {
                     <div class="wg-search__datepicker">
                       <div class="wg-search__datepicker-wrap">
                         <div id="wg-search-to"  class="wg-row-calendar">
-                          <input readonly="" type="text" data-field="" class="wg-search__textinput wg-search__textinput_wide t_arrival_place" placeholder="Туда" value="${getDateNow().dateForInputTo}">
+                          <input readonly="" type="text" data-field="" class="wg-search__textinput wg-search__textinput_wide t_arrival_place" placeholder="Туда" value="">
                           <span class="wg-icon wg-icon_calendar wg-search__calendar-icon" data-id="icon-calendar-to"></span>
                           <div class="my-datepicker" id="datepicker-to"></div>
                         </div>
@@ -39,7 +38,13 @@ export default class SearchDate {
                     </div>
                     <div class="wg-search__example wg-search__example_date">
                       <span class="wg-search__example-item">
-                      <span class="wg-search__example-item">${getDateNow().dateForSpanDay}</span>,&nbsp;<span class="wg-search__example-item">${getDateNow().dateForSpanAddDay}</span>,&nbsp;<span class="wg-search__example-item">${getDateNow().dateForSpanAddTwoDay}</span>
+                      <span class="wg-search__example-item">${
+  getDateNow().dateForSpanDay
+}</span>,&nbsp;<span class="wg-search__example-item">${
+  getDateNow().dateForSpanAddDay
+}</span>,&nbsp;<span class="wg-search__example-item">${
+  getDateNow().dateForSpanAddTwoDay
+}</span>
                     </div>
                   </div>
                 </div>
@@ -65,7 +70,13 @@ export default class SearchDate {
                       </div>
                     </div>
                     <div class="wg-search__example wg-search__example_date">
-                      <span class="wg-search__example-item">${getDateNow().dateForSpanDay}</span>,&nbsp;<span class="wg-search__example-item">${getDateNow().dateForSpanAddDay}</span>,&nbsp;<span class="wg-search__example-item">${getDateNow().dateForSpanAddTwoDay}</span>
+                      <span class="wg-search__example-item">${
+  getDateNow().dateForSpanDay
+}</span>,&nbsp;<span class="wg-search__example-item">${
+  getDateNow().dateForSpanAddDay
+}</span>,&nbsp;<span class="wg-search__example-item">${
+  getDateNow().dateForSpanAddTwoDay
+}</span>
                     </div>
                   </div>
                 </div>
@@ -99,24 +110,29 @@ export default class SearchDate {
 
   /* eslint-disable */
   deletePopup(e) {
-    const popupContainer = e.target.closest('.wg-tip');
-    const popup = popupContainer.querySelector('.wg-tip__popup');
+    const popupContainer = e.target.closest(".wg-tip");
+    const popup = popupContainer.querySelector(".wg-tip__popup");
     popupContainer.removeChild(popup);
   }
 
   showCalendar(e) {
     let el;
-    e.currentTarget.dataset.id === 'icon-calendar-to' ? el = '#datepicker-to' : el = '#datepicker-from';
+    e.currentTarget.dataset.id === "icon-calendar-to"
+      ? (el = "#datepicker-to")
+      : (el = "#datepicker-from");
 
-    const searchRow = e.currentTarget.closest('.wg-search__row');
-    createAirDatepicker(el, searchRow);
-    /* // for brower's calendar
+    const searchRow = e.currentTarget.closest(".wg-search__row");
 
-    const isCalendar = this.container.querySelector('.wg-datepicker');
-    if (isCalendar) isCalendar.parentNode.removeChild(isCalendar);
-    const container = e.target.closest('.wg-row-calendar');
-    const calendar = new Calendar(container);
-    calendar.bindToDOM();
-    */
+    if (!searchRow.querySelector(".air-datepicker")) {
+      const airDatePicker = new AirDatePickerCreator(el, searchRow);
+      airDatePicker.create();
+    } else {
+      const datepicker = searchRow.querySelector(".air-datepicker");
+      if (datepicker.classList.contains("hidden")) {
+        datepicker.classList.remove("hidden");
+      } else {
+        datepicker.classList.add("hidden");
+      }
+    }
   }
 }

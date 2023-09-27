@@ -1,5 +1,5 @@
-import compareDates from './compareDates';
-import getDateNow from './getDateNow';
+import compareDates from './utils/compareDates';
+import getDateNow from './utils/getDateNow';
 import messages from './messages';
 
 export default class Calendar {
